@@ -22,6 +22,10 @@ def extract(raw_path: Path) -> pd.DataFrame:
 def transform(df: pd.DataFrame) -> pd.DataFrame:
     # Transforming Data (Basic Cleaning & Filtering)
 
+    # 1.Remove rows having 'Fare' = 0
+    filt = df['Fare'] > 0
+    df = df[filt]
+
     # 1.Filling missing values in 'Age' column realistically by making groups of 'Pclass' and 'Sex' because 'Age' is highly depending on these two parameters
     df['Age'] = df.groupby(['Pclass','Sex'])['Age'].transform(lambda x: x.fillna(x.median()))
 
