@@ -1,0 +1,8 @@
+|-- .ipynb_checkpoints
+    |-- Untitled-checkpoint.ipynb
+|-- etl_titanic.py
+|-- processed_data
+    |-- titanic.db
+|-- raw_data
+    |-- Titanic_Dataset.csv
+|-- Untitled.ipynb
