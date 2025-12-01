@@ -1,6 +1,11 @@
 import pandas as pd
 from pathlib import Path
 import sqlite3
+from save_embeddings import embed_and_upsert_openai_pinecone
+from dotenv import load_dotenv
+
+load_dotenv()
+
 
 RAW_PATH = Path("raw_data/Titanic_Dataset.csv")
 PROCESSED_DIR = Path("processed_data")
@@ -76,3 +81,5 @@ if __name__ == "__main__":
     df_raw = extract(RAW_PATH)
     df_clean = transform(df_raw)
     load_to_sql(df_clean, DB_PATH)
+    # Saving to Pinecode (as vector embeddings)
+    embed_and_upsert_openai_pinecone(df_clean)

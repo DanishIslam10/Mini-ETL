@@ -1,3 +1,4 @@
+|-- .env
 |-- .gitignore
 |-- .ipynb_checkpoints
     |-- Untitled-checkpoint.ipynb
@@ -6,4 +7,7 @@
     |-- titanic.db
 |-- raw_data
     |-- Titanic_Dataset.csv
+|-- save_embeddings.py
 |-- Untitled.ipynb
+|-- __pycache__
+    |-- save_embeddings.cpython-312.pyc
